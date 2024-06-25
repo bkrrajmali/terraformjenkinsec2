@@ -6,5 +6,12 @@ pipeline {
             echo "This is Build"
             }
         }
+        stage (' Install Terraform') {
+            steps {
+                script {
+                    sh 'sudo apt-get update && sudo apt-get install -y gnupg software-properties-common'
+                }
+            }
+        }
     }
 }
